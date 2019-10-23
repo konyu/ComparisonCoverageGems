@@ -1,22 +1,24 @@
-require "json"
-require "oneshot_coverage/logger/file_logger"
+# oneshot_coverage仕様時にコメントアウトする
 
-logfile_path = 'log/oneshot_coverage.log'
+# require "json"
+# require "oneshot_coverage/logger/file_logger"
 
-begin
-  File.open(logfile_path) do |j|
-    hash = JSON.load(j)
-    raise "empty file" if hash.nil?
-  end
-rescue
-  File.open(logfile_path,"w") do |file|
-    file.puts("{}")
-  end
-end
+# logfile_path = 'log/oneshot_coverage.log'
 
-OneshotCoverage.configure(
-  target_path: Rails.root,
-  logger: OneshotCoverage::Logger::FileLogger.new(logfile_path),
-  emit_term: nil,
-)
-OneshotCoverage.start
+# begin
+#   File.open(logfile_path) do |j|
+#     hash = JSON.load(j)
+#     raise "empty file" if hash.nil?
+#   end
+# rescue
+#   File.open(logfile_path,"w") do |file|
+#     file.puts("{}")
+#   end
+# end
+
+# OneshotCoverage.configure(
+#   target_path: Rails.root,
+#   logger: OneshotCoverage::Logger::FileLogger.new(logfile_path),
+#   emit_term: nil,
+# )
+# OneshotCoverage.start

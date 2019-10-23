@@ -29,7 +29,12 @@ gem 'jbuilder', '~> 2.7'
 gem 'bootsnap', '>= 1.4.2', require: false
 
 # onshot coverage
-gem 'oneshot_coverage'
+# gem 'oneshot_coverage'
+
+# coverage with simpleCov
+gem 'coverband'
+# 環境変数
+gem 'dotenv-rails', require: 'dotenv/rails-now'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
